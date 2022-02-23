@@ -38,8 +38,20 @@ public class Datum {
             return false;
         }
 
-        if(nap < 1 || nap > 31){
-            return false;
+        if(ho==2){
+           if(szokoEv(ev)){
+               if(nap < 1 || nap > 29){
+                   return true;
+               }
+           } else {
+               if(nap < 1 || nap > 28){
+                   return true;
+               }
+           }
+        } else {
+            if (nap < 1 || nap > 31) {
+                return false;
+            }
         }
         return true;
     }
