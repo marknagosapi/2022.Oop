@@ -20,6 +20,7 @@ public class Car {
             default -> this.color = Color.BLACK;
         }
 
+        //this.fuelType = FuelType.values()[fuel]; //ha az index-el talal es biztos nem nagyobb a fuel erteke a max indexnel, akkor igy is lehet
         switch(fuel){
             case 0 -> this.fuelType = FuelType.DIESEL;
             case 1 -> this.fuelType = FuelType.PETROL;
@@ -27,6 +28,8 @@ public class Car {
             case 3 -> this.fuelType = FuelType.ELECTRIC;
             default -> this.fuelType = FuelType.HYBRID;
         }
+
+
 
         this.speed = 0;
         this.numberOfKilometers = 0;
@@ -103,6 +106,7 @@ public class Car {
         } else {
             helper = "two-seater car";
         }
+        //helper = (maxPassengers == 5) ? ("family car") : ("two-seater car"); //rovidebben
 
         return carType + " " + carBrand + " " + helper + " manufactured in " + yearOfManufacture + ".\n" + "\t\t\t Properties:\n" + "\t\t\t\t-COLOR: " +
                 color + "\n" + "\t\t\t\t-FUEL: " + fuelType + "\n" + "\t\t\t\t-KMs traveled: " + numberOfKilometers + "\n";
