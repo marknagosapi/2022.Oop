@@ -5,7 +5,7 @@
 - I Year CS Student at Sapientia Uni!
 - 🧙🏿‍♂️
 
-##Score:
+## Score:
 
 |    Type     | Mark |
 |:-----------:|:----:|
