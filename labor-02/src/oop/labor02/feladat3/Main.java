@@ -1,26 +1,9 @@
-package oop.labor02.feladat1;
+package oop.labor02.feladat3;
+
+import oop.labor02.feladat3.Datum;
 
 public class Main {
     public static void main(String[] args) {
-        /* FELADAT 2
-        Auto auto = new Auto("kek");
-
-        System.out.println("Az auto adatai: " + auto.toString());
-
-        for(int i=0;i<12;i++){
-            auto.novelSebesseg();
-        }
-
-        Auto auto2 = new Auto("sarga");
-
-        for(int i=0;i<6;i++){
-            auto2.novelSebesseg();
-        }
-
-        System.out.println("Az auto adatai: " + auto2.toString());
-
-         */
-
         // FELADAT 3
         Datum datum = new Datum(2016, 12, 1);
 

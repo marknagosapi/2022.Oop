@@ -1,4 +1,4 @@
-package oop.labor02.feladat1;
+package oop.labor02.feladat3;
 
 import static java.sql.Types.NULL;
 

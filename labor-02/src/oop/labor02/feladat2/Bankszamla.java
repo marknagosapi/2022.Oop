@@ -1,4 +1,4 @@
-package feladat2;
+package oop.labor02.feladat2;
 public class Bankszamla {
     private double egyenleg;
     public Bankszamla( double osszeg)
