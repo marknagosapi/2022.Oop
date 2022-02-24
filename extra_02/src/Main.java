@@ -12,7 +12,7 @@ public class Main {
         System.out.println("=============================\n");
         Scanner input = null;
         try {
-            input = new Scanner(new File("cars.txt"));
+            input = new Scanner(new File("inputFiles/cars.txt"));
         } catch(FileNotFoundException s) {
             System.out.println("[ERROR] File does Not Exist Please Try Again (Exception:" + s + ")\n");
         }
