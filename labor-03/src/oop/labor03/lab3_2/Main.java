@@ -24,7 +24,7 @@ public class Main {
         customer2.addAccount(new BankAccount("OTP0006"));
 
 
-
+        String OTP = "OTP";
         System.out.println(customer2);
         customer1.getAccount("OTP0001").deposit(1000);
         System.out.println(customer1);

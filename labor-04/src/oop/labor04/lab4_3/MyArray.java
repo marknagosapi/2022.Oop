@@ -22,7 +22,7 @@ public class MyArray {
 
     public MyArray(MyArray array){
         this.length = array.length;
-        this.elements = array.elements;
+        if (this.length >= 0) System.arraycopy(array.elements, 0, this.elements, 0, this.length);
     }
 
     public MyArray(double[] elements){
