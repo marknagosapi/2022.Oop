@@ -1,4 +1,4 @@
-package oop.labor06.lab6_2;
+package oop.labor07.lab7_2;
 
 import java.util.ArrayList;
 

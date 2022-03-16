@@ -1,7 +1,5 @@
-package oop.labor05.lab5_1;
+package oop.labor07.lab7_1;
 
-import java.awt.image.BaseMultiResolutionImage;
-import java.rmi.NotBoundException;
 import java.util.ArrayList;
 import java.util.function.Predicate;
 
@@ -10,7 +8,7 @@ public class Customer {
     //Variables
     private static int numCustomers = 0;
     private final int id;
-    private String firstName;
+    private final String firstName;
     private String lastName;
     private ArrayList<BankAccount> accounts = new ArrayList<>();
 
@@ -72,11 +70,16 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                ", id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", accounts=" + accounts +
-                '}';
+        StringBuffer result = new StringBuffer();
+        result.append("*********************************\n");
+        result.append("Customer " + this.firstName + " " + this.lastName + ": \n");
+        result.append("\t\t-ID: " + this.id + "\n");
+        result.append("\t\t-Accounts ("+this.getNumAccounts()+"): " + "\n");
+
+        for(BankAccount accounts: this.getAccount()){
+            result.append(accounts);
+        }
+        result.append("\n**********************************\n");
+        return result.toString();
     }
 }

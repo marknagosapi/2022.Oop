@@ -1,4 +1,4 @@
-package oop.labor06.lab6_1;
+package oop.labor07.lab7_1;
 
 public class CheckingAccount extends BankAccount{
 

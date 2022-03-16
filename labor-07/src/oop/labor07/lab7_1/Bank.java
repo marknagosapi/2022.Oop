@@ -1,8 +1,8 @@
-package oop.labor05.lab5_1;
+package oop.labor07.lab7_1;
+
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Bank {
     //Variables (Adattagok)

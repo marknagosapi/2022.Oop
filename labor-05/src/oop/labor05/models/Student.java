@@ -31,10 +31,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "ID='" + ID + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        return "(" +this.ID + ") - " + this.firstName + " " + this.lastName;
     }
 }

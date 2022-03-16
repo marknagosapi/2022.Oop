@@ -1,4 +1,4 @@
-package oop.labor05.lab5_2;
+package oop.labor06.lab6_2;
 
 public class Matrix {
 

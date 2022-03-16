@@ -1,20 +1,18 @@
 package oop.labor06.lab6_1;
 
-import java.math.*;
-
 import static java.lang.Math.floor;
 
 public class BankAccount {
     //Variables
-    protected final String accountNumber;
-    private static int numAccounts = 0;
+    private final String accountNumber;
+    public static int numAccounts = 0;
     public int ACCOUNT_NUMBER_LENGTH;
     public static final String PREFIX = "OTP";
-    protected double balance = 0;
+    private double balance = 0;
 
 
     //Constructor
-    protected BankAccount(){
+    public BankAccount(){
         numAccounts++;
         this.accountNumber = createAccountNumber();
     }
@@ -47,7 +45,7 @@ public class BankAccount {
     }
 
     public boolean withdraw(double amount){
-        if(amount > this.balance){
+        if(amount >= this.balance){
             return false;
         } else {
             this.balance = this.balance - amount;
@@ -56,6 +54,7 @@ public class BankAccount {
     }
 
     public String toString(){
+
         return this.accountNumber + ": " + this.balance;
     }
 }
