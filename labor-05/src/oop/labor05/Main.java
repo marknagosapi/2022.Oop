@@ -81,5 +81,8 @@ public class Main {
         }
         System.out.println(trainings);
 
+        for(Training item:trainings){
+            item.printToFile();
+        }
     }
 }

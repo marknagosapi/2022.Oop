@@ -1,9 +1,9 @@
 package oop.labor05.models;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
+
+import java.io.*;
 import java.util.ArrayList;
+import java.util.SplittableRandom;
 
 public class Training {
 
@@ -52,12 +52,54 @@ public class Training {
     }
 
     public void printToFile(){
+        String courseName = this.course.getName();
+        String startDate = this.startDate.toString();
+        String endDate = this.endDate.toString();
+        String[] t = startDate.split("/");
+        String[] t2 = endDate.split("/");
 
-        try(PrintStream output = new PrintStream("output.txt")) {
-
-        }catch(FileNotFoundException ex){
-            ex.printStackTrace();
+        String endDate2 = "";
+        String startDate2 = "";
+        for(int i =0;i<t.length;i++){
+            if(i==t.length-1){
+                startDate2 += t[i].trim();
+            }else {
+                startDate2 += t[i].trim() + ".";
+            }
         }
+        for(int i =0;i<t2.length;i++){
+            if(i==t2.length-1){
+                endDate2 += t2[i].trim();
+            } else {
+                endDate2 += t2[i].trim() + ".";
+            }
+        }
+
+        String filepath = courseName+"_"+startDate2+"_"+endDate2+".csv";
+
+        File file = new File("outputFiles/"+filepath);
+        boolean result;
+        try{
+            result = file.createNewFile();
+            if(result){
+
+            } else {
+                System.out.println("File already exists!");
+            }
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+        try(PrintStream ps = new PrintStream(file)){
+            ps.println("ID, Firstname, Last name,");
+            for( Student customer: enrolledStudents ){
+                ps.println( customer.getID()+", " + customer.getFirstName() +", "+
+                        customer.getLastName());
+            }
+            ps.close();
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+
     }
 
     public void unEnroll(String ID){
