@@ -80,6 +80,7 @@ public class CircularQueue implements IQueue {
                 return false;
             }
         }
+
         return true;
     }
 
