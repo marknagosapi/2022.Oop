@@ -6,8 +6,8 @@ public class BankAccount {
     //Variables
     private final String accountNumber;
     public static int numAccounts = 0;
-    public int ACCOUNT_NUMBER_LENGTH;
-    public static final String PREFIX = "OTP";
+    public static final int  ACCOUNT_NUMBER_LENGTH = 10;
+    public static final String PREFIX = "ERSTE";
     private double balance = 0;
 
 
@@ -21,13 +21,14 @@ public class BankAccount {
     private String createAccountNumber(){
         //public static int numAccounts = 0;
         int lengthOfNum = (int) floor(Math.log10(numAccounts))+1;
-        int n = 7 - lengthOfNum;
-        String accountNumber = PREFIX;
+        int prefixLength = PREFIX.length();
+        int n = ACCOUNT_NUMBER_LENGTH - lengthOfNum - prefixLength;
+        StringBuilder accountNumber = new StringBuilder(PREFIX);
         for(int i=0;i<n;i++){
-            accountNumber += "0";
+            accountNumber.append("0");
         }
-        accountNumber += Integer.toString(numAccounts);
-        return accountNumber;
+        accountNumber.append(Integer.toString(numAccounts));
+        return accountNumber.toString();
     }
 
     public double getBalance() {

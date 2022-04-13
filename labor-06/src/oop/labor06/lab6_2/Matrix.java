@@ -1,11 +1,13 @@
 package oop.labor06.lab6_2;
 
+import java.util.SimpleTimeZone;
+
 public class Matrix {
 
     //Variables
     private double[][] data;
-    private int rows;
-    private int columns;
+    private final int rows;
+    private final int columns;
 
     //Constructors
     public Matrix(int rows, int columns){
@@ -79,6 +81,10 @@ public class Matrix {
     }
 
     public static Matrix multiply(Matrix m1, Matrix m2){
+        if(m1.columns != m2.rows){
+            System.out.println("Cannot multiply this matrices!\n");
+            return null;
+        }
         Matrix m3 = new Matrix(m1.rows, m2.columns);
         double a = 0;
         for(int i=0;i<m1.rows;i++){

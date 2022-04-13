@@ -1,4 +1,4 @@
-package oop.labor07.lab7_2;
+package oop.labor08.lab8_2;
 
 public class Main {
     public static void main(String[] args){
@@ -17,7 +17,7 @@ public class Main {
         for( int i=0; i<10; ++i ){
             stack2.push( i );
         }
-        //stack2.remove( 1 );
+        stack2.remove( 1 );
         System.out.print("StackInheritance : ");
         while( !stack2.isEmpty() ){
             System.out.print( stack2.top() + " ");

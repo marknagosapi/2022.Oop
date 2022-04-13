@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Bank {
     //Variables (Adattagok)
-    private String name;
+    private final String name;
     ArrayList<Customer> customers = new ArrayList<>();
 
     //Constructor
@@ -41,7 +41,8 @@ public class Bank {
     }
 
     public void printCustomersToStdout(){
-        System.out.println(customers);
+        printCustomers(System.out);
+        //System.out.println(customers);
     }
 
     public void printCustomersToFile(String fileName){
@@ -55,15 +56,23 @@ public class Bank {
         }
 
           */
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("outputFiles/" + fileName));
-            for(Customer item: customers){
-                writer.write(item.toString() + "\n");
-            }
-            //writer.write(String.valueOf(customers));
-            writer.close();
-        } catch (IOException e) {
+        File f = new File("outputFiles/" + fileName);
+        try{
+            PrintStream output = new PrintStream(f);
+            printCustomers(output);
+        }catch(IOException e){
             e.printStackTrace();
         }
+
+//        try {
+//            BufferedWriter writer = new BufferedWriter(new FileWriter("outputFiles/" + fileName));
+//            for(Customer item: customers){
+//                writer.write(item.toString() + "\n");
+//            }
+//            //writer.write(String.valueOf(customers));
+//            writer.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }

@@ -1,4 +1,4 @@
-package oop.labor07.lab7_1;
+package oop.labor08.lab8_1;
 
 public class CheckingAccount extends BankAccount{
 
@@ -19,9 +19,9 @@ public class CheckingAccount extends BankAccount{
     }
 
     public boolean withdraw (double amount){
-        if(amount <= this.overdraftLimit){
+        if(balance + overdraftLimit - amount >=0){
             //code
-            super.withdraw(amount);
+            this.balance -= amount;
             return true;
         }
         System.out.println("Waay over the limit buddy! GO WORK");

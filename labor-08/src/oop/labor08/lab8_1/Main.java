@@ -1,4 +1,4 @@
-package oop.labor07.lab7_1;
+package oop.labor08.lab8_1;
 
 import java.util.Random;
 

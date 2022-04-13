@@ -1,3 +1,4 @@
-Customer{, id=1, firstName='Simo', lastName='Robert', accounts=[OTP0000001: 15000.0, OTP0000002: 15000.0]}
-Customer{, id=2, firstName='Peter', lastName='Lajos', accounts=[OTP0000003: 15000.0, OTP0000004: 15000.0]}
-Customer{, id=3, firstName='Mark', lastName='Nagy', accounts=[]}
+ID, Firstname, Last name, Number of bank accounts
+1, Simo, Robert, [ERSTE00001, ERSTE00002]
+2, Peter, Lajos, [ERSTE00003, ERSTE00004]
+3, Mark, Nagy, []

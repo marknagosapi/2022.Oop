@@ -8,7 +8,7 @@ public class Customer {
     //Variables
     private static int numCustomers = 0;
     private final int id;
-    private String firstName;
+    private final String firstName;
     private String lastName;
     private ArrayList<BankAccount> accounts = new ArrayList<>();
 

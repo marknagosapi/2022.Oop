@@ -1,14 +1,14 @@
-package oop.labor07.lab7_2;
+package oop.labor08.lab8_2;
 
 import java.util.ArrayList;
 
-public class StackInheritance extends ArrayList{
+public class StackAggregation {
     //Variables
     private ArrayList<Object> items = new ArrayList<>();
     private final int capacity;
 
     //Constructor
-    public StackInheritance(int capacity) {
+    public StackAggregation(int capacity) {
         this.capacity = capacity;
     }
 
@@ -26,6 +26,7 @@ public class StackInheritance extends ArrayList{
             items.add(object);
         }
     }
+
 
     public void pop(){
         items.remove(items.size()-1);

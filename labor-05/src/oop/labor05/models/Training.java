@@ -103,11 +103,7 @@ public class Training {
     }
 
     public void unEnroll(String ID){
-        for(Student students: enrolledStudents){
-            if(students.getID().equals(ID)){
-
-            }
-        }
+        enrolledStudents.removeIf(students -> students.getID().equals(ID));
     }
 
     @Override
