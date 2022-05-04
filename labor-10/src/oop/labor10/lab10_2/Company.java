@@ -56,11 +56,8 @@ public class Company {
     }
 
     public void fire(int ID){
-         for(Employee employee: employees){
-             if (employee.getID() == ID) {
-                  employees.remove(employee);
-             }
-         }
+         //removeIf használata
+        employees.removeIf(employee -> employee.getID() == ID);
     }
 
     public void printAll(PrintStream ps){
@@ -74,7 +71,7 @@ public class Company {
     public void printManagers(PrintStream ps){
         for(Employee employee: employees){
             if(employee.getClass() == Manager.class) {
-                ps.println(employee.toString());
+                ps.println(employee.toString()); //nem kell toString hivas
             }
         }
     }

@@ -3,6 +3,7 @@ package oop.labor10.lab10_3;
 public class Product implements Comparable<Product>{
 
     //Variables
+    //Hasznalj final-t ahol indokolt
     private int ID;
     private String name;
     private int amount;

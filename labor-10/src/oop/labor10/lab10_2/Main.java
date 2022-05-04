@@ -57,10 +57,11 @@ public class Main {
         company.sortByComparator(new Comparator<Employee>() {
             @Override
             public int compare(Employee o1, Employee o2) {
-
+                //Próbáld inkább a getClass-t
                if(o1 instanceof Manager && o2 instanceof Employee || o2 instanceof Manager && o1 instanceof Employee){
                    return 1;
                }
+               //itt hasznalhatod az alap compareTo-t, mert megirtad
                 return (o1.getFirstName() + o1.getLastName()).compareTo(o2.getFirstName() + o2.getLastName());
 
             }

@@ -30,7 +30,7 @@ public class Storage {
 
     public ArrayList<Product> getProducts() {
         return products;
-    }
+    } //ilyent nem generalunk
 
     //Methods
 
@@ -43,6 +43,7 @@ public class Storage {
                 temp = scanner.nextLine();
                 m = temp.split(" ");
 
+                //van beépített binary search, de ahhoz hogy ezt használhasd rendezett kell legyen az adathalmaz.
                 int index = binarySearch(products,0,products.size()-1,Integer.parseInt(m[0].trim()));
 
                 if(index!=-1) {
