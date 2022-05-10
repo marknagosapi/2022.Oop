@@ -21,14 +21,29 @@ public class Main {
 
         company.printAll(System.out);
 
-        company.sortByComparator(Comparator.comparing(Employee::getBirthDate));
+        company.sortByComparator(new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                return o1.getBirthDate().compareTo(o2.getBirthDate());
+            }
+        });
 
         System.out.println();
         System.out.println("EMPLOYEES SORTED BY BIRTHDAY");
         System.out.println();
         company.printAll(System.out);
 
-        company.sortByComparator((o1, o2) -> Double.compare(o2.getSalary(), o1.getSalary()));
+        company.sortByComparator(new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                if(o1.getSalary() > o2.getSalary()){
+                    return -1;
+                } else if(o1.getSalary() == o2.getSalary()) {
+                    return 0;
+                } else {return 1;
+                }
+            }
+        });
 
         System.out.println();
         System.out.println("EMPLOYEES SORTED BY DECREASING SALARY");
@@ -39,13 +54,17 @@ public class Main {
         System.out.println("EMPLOYEES SORTED BY MANAGER-EMPLOYEE ALPHABETICALLY");
         System.out.println();
 
-        company.sortByComparator((o1, o2) -> {
+        company.sortByComparator(new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                //Próbáld inkább a getClass-t
+               if(o1 instanceof Manager && o2 instanceof Employee || o2 instanceof Manager && o1 instanceof Employee){
+                   return 1;
+               }
+               //itt hasznalhatod az alap compareTo-t, mert megirtad
+                return (o1.getFirstName() + o1.getLastName()).compareTo(o2.getFirstName() + o2.getLastName());
 
-           if(o1.getClass() == Manager.class && o2.getClass()==Employee.class || o2.getClass() == Manager.class && o1.getClass()==Employee.class){
-               return 1;
-           }
-            return (o1.getFirstName() +" "+ o1.getLastName()).compareTo(o2.getFirstName() +" "+ o2.getLastName());
-
+            }
         });
         company.printAll(System.out);
         System.out.println();
