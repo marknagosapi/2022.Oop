@@ -56,11 +56,7 @@ public class Company {
     }
 
     public void fire(int ID){
-         for(Employee employee: employees){
-             if (employee.getID() == ID) {
-                  employees.remove(employee);
-             }
-         }
+        employees.removeIf(employee -> employee.getID() == ID);
     }
 
     public void printAll(PrintStream ps){
